@@ -1,0 +1,60 @@
+package test;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.regex.Pattern;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Signup extends HttpServlet {
+	public static ImplementClass implement = new ImplementClass();
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		String name = request.getParameter("username");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		name.trim();
+		email.trim();
+		password.trim();
+		if (name != null && email != null && password != null) {
+			boolean result = implement.add(name, email, password);
+			if (result) {
+				request.getRequestDispatcher("login.html").include(request, response);
+				out.println("<center>Record added</center>");
+			} else {
+				request.getRequestDispatcher("login.html").include(request, response);
+				out.print("<center>Record already exist</center>");
+			}
+		}
+		boolean stringContainsNumber = Pattern.compile("[0-9]").matcher(name).find();
+		boolean stringContainsSpecialCharacter = Pattern.compile("[^a-zA-Z ]").matcher(name).find();
+		if (name.isEmpty()) {
+			request.getRequestDispatcher("signup.html").include(request, response);
+			out.print("<center>Enter the Username</center>");
+		} else if (stringContainsNumber == true) {
+			request.getRequestDispatcher("signup.html").include(request, response);
+			out.print("<center>Username must not contain number</center>");
+		} else if (stringContainsSpecialCharacter == true) {
+			request.getRequestDispatcher("signup.html").include(request, response);
+			out.print("<center>Username must not contain Special Characters</center>");
+		} else if (email.isEmpty()) {
+			request.getRequestDispatcher("signup.html").include(request, response);
+			out.print("<center>Enter the Email Address</center>");
+		} else {
+			if (password.isEmpty()) {
+				request.getRequestDispatcher("signup.html").include(request, response);
+				out.print("<center>Enter the password</center>");
+			} else if (password.length() < 8) {
+				request.getRequestDispatcher("signup.html").include(request, response);
+				out.print("<center>Password is weak</center>");
+			}
+		}
+
+	}
+}
