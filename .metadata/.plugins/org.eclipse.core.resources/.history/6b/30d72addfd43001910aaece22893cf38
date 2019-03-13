@@ -1,0 +1,42 @@
+package test;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Add extends HttpServlet {
+	public static ArrayList<Integer> KartList = new ArrayList<>();
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		String number = request.getParameter("value");
+		number.trim();
+		int amount = Integer.parseInt(number);
+		String name = Kart.name;
+		int value = Kart.price;
+		int price = addCartItem(amount, value);
+		out.print("<html><body><p align='center'>Product----------Quantity------Price</p>");
+		out.print("<p align='center'>"+name"---------"+amount+"------+"price"</p>");
+		out.print("</body></html>");
+		
+	}
+
+	public int addCartItem(int quantity, int price) {
+		int totalPrice = 0;
+		int sum = 0;
+		if (quantity > 0) {
+			totalPrice = price * quantity;
+			KartList.add(totalPrice);
+			sum += totalPrice;
+		}
+		return sum;
+	}
+
+}

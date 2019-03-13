@@ -1,0 +1,17 @@
+package test;
+
+public class SignupClass {
+	String name, email, password;
+
+	void getName(String name) {
+		this.name = name;
+	}
+
+	void getEmail(String email) {
+		this.email = email;
+	}
+
+	void getPassword(String password) {
+		this.password = password;
+	}
+}

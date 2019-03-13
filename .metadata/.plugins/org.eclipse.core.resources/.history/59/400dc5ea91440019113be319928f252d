@@ -1,0 +1,17 @@
+package testdriven;
+
+import static org.junit.jupiter.api.Assertions.*;
+import test.SignupServlet;
+
+import org.junit.jupiter.api.Test;
+
+import test.SignupServlet;
+
+class SignupTest {
+
+	@Test
+	void test() {
+		Signup signup = new Signup();
+	}
+
+}

@@ -1,0 +1,4 @@
+
+Mar 10, 2019 19:13:50.56 NEW SESSION
+Mar 10, 2019 19:13:50.56 [2984:4352:0310/191350.549:ERROR:CONSOLE(279)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://youtube.com') does not match the recipient window's origin ('https://www.google.com').", source: chrome-search://most-visited/single.js (279)
+Mar 10, 2019 19:47:56.87 [2984:4024:0310/194756.870:ERROR:browser_process_sub_thread.cc(209)] Waited 135 ms for network service

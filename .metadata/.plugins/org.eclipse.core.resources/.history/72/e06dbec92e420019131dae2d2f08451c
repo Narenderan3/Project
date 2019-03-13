@@ -1,0 +1,16 @@
+package test;
+
+import java.util.*;
+
+public class ImplementClass {
+	ArrayList<SignupClass> ClassList = new ArrayList<>();
+	
+	public boolean add(String name,String mail,String password)
+	{
+		
+		return true;
+	}
+	
+	
+
+}

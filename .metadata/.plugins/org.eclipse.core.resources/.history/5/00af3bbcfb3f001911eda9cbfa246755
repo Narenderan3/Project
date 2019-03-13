@@ -1,0 +1,32 @@
+package test;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		if (email.length() == 0) {
+			out.print("<center>Enter the Email Address</center>");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("login.html");
+			dispatcher.include(request, response);
+		} else if (password.length() == 0) {
+			out.print("<center>Enter the password</center>");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("login.html");
+			dispatcher.include(request, response);
+		}
+		out.print(
+				"<body style= background-image:url(\"https://s.aolcdn.com/hss/storage/midas/7899c657da75bcba18cd507e8a69b8bd/203797873/mimaxlead.jpg\")>");
+		out.print(
+				"<img src=\" https://images.locanto.net/Redmi-5A-32-GB-SEALED-PACK/tn_3385081571.jpg\" alt=\" Redmi note 5A\"");
+	}
+}

@@ -11,13 +11,11 @@ public class ImplementClass {
 		length++;
 		for (SignupClass sc : ClassList) {
 			if (sc.getEmail().equals(mail)) {
-				if (!flag) {
-					flag = true;
-					break;
-				}
+				flag = true;
+				break;
 			}
 		}
-		if (flag) {
+		if (!flag) {
 			SignupClass sc = new SignupClass();
 			sc.setEmail(mail);
 			sc.setId(length);

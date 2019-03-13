@@ -1,0 +1,39 @@
+package test;
+
+import java.util.ArrayList;
+
+public class AddingClass {
+	ArrayList<KartClass> KartList = new ArrayList<>();
+	KartClass kart = new KartClass();
+
+	public void addCartItem(String product, String quantity, String price) {
+		int unitPrice = 0;
+		int totalPrice = 0;
+		int iQuantity = 0;
+		unitPrice = Integer.parseInt(price);
+		iQuantity = Integer.parseInt(quantity);
+		if (iQuantity > 0) {
+			totalPrice = unitPrice * iQuantity;
+			kart.setPrice(unitPrice);
+			kart.setQuantity(iQuantity);
+			kart.setProduct(product);
+			kart.setTotalCost(totalPrice);
+			KartList.add(kart);
+			calculateOrderTotal();
+		}
+	}
+
+	protected int calculateOrderTotal() {
+		int intTotal = 0;
+		for (int counter = 0; counter < KartList.size(); counter++) {
+			KartClass cartItem = (KartClass) KartList.get(counter);
+			intTotal += cartItem.getTotalCost();
+		}
+		return intTotal;
+	}
+	protected String displayQuantity()
+	{
+		return null;
+		
+	}
+}

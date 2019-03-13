@@ -1,0 +1,48 @@
+package test;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		if (email.length() == 0) {
+			out.print("<center>Enter the Email Address</center>");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("login.html");
+			dispatcher.include(request, response);
+		} else if (password.length() == 0) {
+			out.print("<center>Enter the password</center>");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("login.html");
+			dispatcher.include(request, response);
+		}
+		out.print(
+				"<body style= background-image:url(\"https://s.aolcdn.com/hss/storage/midas/7899c657da75bcba18cd507e8a69b8bd/203797873/mimaxlead.jpg\")>");
+		out.print(
+				"<img src= 'https://images.locanto.net/Redmi-5A-32-GB-SEALED-PACK/tn_3385081571.jpg' alt='Redmi note 5A 32GB'>");
+		out.print("<img src= 'https://img.ksp.co.il/item/46343/b_3.jpg' alt='Redmi 5' width=75px height=150px>");
+		out.print(
+				"<img src= 'https://www.91-img.com/pictures/103712-v2-xiaomi-redmi-note-4-64gb-mobile-phone-large-1.jpg' alt='Redmi note 4' width=110px height=150px>");
+		out.print(
+				"<img src= 'https://www.91-img.com/gallery_images_uploads/d/a/da11d00c5a700c4a1c68e6df88c65c81de685384.jpg?w=0&h=901&q=80&c=1' alt='Redmi 4 16GB' width=75px height=150px>");
+		out.print(
+				"<img src= 'https://www.91-img.com/gallery_images_uploads/f/8/f8bb2da448d54f48ebabf60e335f4fff9cbf49ab.jpg?w=0&h=901&q=80&c=1' alt='Redmi 4A' width=75px height=150px>");
+		out.print(
+				"<img src= 'https://www.91-img.com/gallery_images_uploads/1/1/1169a542565c73526a14d4c4ab88fdeef938dbc8.jpg?w=0&h=901&q=80&c=1' alt='Redmi 5 Plus' width=110px height=150px>");
+		out.print(
+				"<img src= 'https://www.91-img.com/pictures/125125-v3-xiaomi-redmi-note-5-pro-6gb-ram-mobile-phone-medium-1.jpg' alt='Redmi Note 5 Pro 6GB' width=110px height=150px>");
+		out.print(
+				"<img src= 'https://www.91-img.com/gallery_images_uploads/8/b/8bb56152c1a9a1d86bea7eeb39c00825635a6919.jpg?w=0&h=901&q=80&c=1' alt='Redmi 6A' width=75px height=150px>");
+		out.print(
+				"<img src= 'https://www.91-img.com/pictures/129556-v10-xiaomi-redmi-note-6-pro-mobile-phone-medium-1.jpg' alt='Redmi Note 6 Pro' width=110px height=150px>");
+
+	}
+}

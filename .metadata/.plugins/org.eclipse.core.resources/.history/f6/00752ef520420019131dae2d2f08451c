@@ -1,0 +1,9 @@
+package test;
+
+import java.util.*;
+
+public class Check {
+	SignupClass signup=new SignupClass();
+	ArrayList<SignupClass> list = new ArrayList<>();
+	list.add(signup);
+}

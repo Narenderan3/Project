@@ -20,6 +20,7 @@ public class Add extends HttpServlet {
 			throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		String number = request.getParameter("value");
+		number.trim();
 		String name = Kart.name;
 		int value = Kart.price;
 		kartProduct.add(name);

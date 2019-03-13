@@ -1,0 +1,49 @@
+package test;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Login extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		if (email.length() == 0) {
+			out.print("<center>Enter the Email Address</center>");
+			request.getRequestDispatcher("login.html").include(request, response);
+		} else if (password.length() == 0) {
+			out.print("<center>Enter the password</center>");
+			request.getRequestDispatcher("login.html").include(request, response);
+		}
+		int flag = 0;
+		for (SignupClass sc : Signup.ic.ClassList) {
+			String mail = sc.getEmail();
+			if (mail.equals(email)) {
+				flag = 1;
+				if (password.equals(sc.getPassword())) {
+					// redirect to home page
+					response.sendRedirect("content.html");
+				} else {
+					// Send redirect to login page and say password is wrong
+					out.print("<center>Password is wrong</center>");
+					request.getRequestDispatcher("login.html").include(request, response);
+				}
+			}
+		}
+		if (flag == 0) {
+			// send redirect to login and say email is wrong or not present
+			out.print("<center>First signup and then login</center>");
+			request.getRequestDispatcher("login.html").include(request, response);
+		}
+	}
+
+}

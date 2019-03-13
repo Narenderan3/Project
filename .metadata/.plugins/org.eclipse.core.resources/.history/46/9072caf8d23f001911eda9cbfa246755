@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+<style>
+.align {
+	border: 3px solid lightgreen;
+	margin:50px;
+}
+
+p {
+	color: blue;
+	font-size: 20px;
+	font-family: sans serif;
+}
+
+.align button {
+	cursor: pointer;
+	margin: 1px;
+	padding: 2px;
+	background-color: grey;
+}
+
+.link {
+	text-decoration: none;
+}
+</style>
+</head>
+<body>
+	<div class="align">
+		<form action="login" method="post">
+			<p>
+				<input type="email" name="email" placeholder="Email"> <br>
+			</p>
+			<p>
+				<input type="password" name="password" placeholder="Password">
+				<br>
+			</p>
+			<button type="submit">Login</button>
+			<p style="text-align: left; font-size: 15px">
+				Not Registered ? <a class="link" href="signup.html">Sign Up</a>
+			</p>
+		</form>
+	</div>
+</body>
+</html>

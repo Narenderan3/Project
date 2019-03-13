@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<style>
+.content {
+	font-size: 30px;
+	margin-top: 160px;
+	margin-left: 90px;
+}
+
+.header {
+	font-family: sans-serif;;
+	background-color: lightcoral;
+	box-shadow: 0 0 18px #6699ff;
+	opacity: 0.8;
+	padding: 5px;
+}
+
+.mobile a {
+	float: left;
+	text-decoration: none;
+	font-size: 20px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.list {
+	float: right;
+}
+
+.list a, .Company a {
+	text-decoration: none;
+	color: white;
+	margin-right: 10px;
+}
+
+li {
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.clearfix::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+</style>
+</head>
+<header>
+	<div class="header clearfix">
+		<div class="mobile">
+			<a href="Home.html">Mi Mobile Phones</a>
+		</div>
+		<nav>
+			<ul class="list">
+				<li><a href="login.html">Login</a></li>
+				<li><a href="signup.html">SignUp</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<body
+	background="https://s.aolcdn.com/hss/storage/midas/7899c657da75bcba18cd507e8a69b8bd/203797873/mimaxlead.jpg">
+
+	<p class="content" align="center">
+		Welcome to Mi Mobile Phones<br> Buy this mobile phones at cheaper
+		and affordable rate.
+	</p>
+</body>
+</html>

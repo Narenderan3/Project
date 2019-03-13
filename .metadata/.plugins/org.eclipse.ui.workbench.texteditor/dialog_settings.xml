@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="452" key="DIALOG_X_ORIGIN"/>
+		<item value="247" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="sc" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="sc"/>
+			<item value="amount"/>
+			<item value="KartAmount"/>
+			<item value="KartPrice"/>
+			<item value="KartProduct"/>
+			<item value="KartList"/>
+			<item value="text-decoration: none;"/>
+			<item value="res"/>
+			<item value="req"/>
+			<item value="Student"/>
+			<item value="strbuffer"/>
+			<item value="StringBuffer"/>
+			<item value="A4"/>
+			<item value="Emp"/>
+			<item value="A"/>
+		</list>
+		<list key="replacehistory">
+			<item value="signup"/>
+			<item value="number"/>
+			<item value="kartAmount"/>
+			<item value="kartPrice"/>
+			<item value="kartProduct"/>
+			<item value="kartList"/>
+			<item value="response"/>
+			<item value="request"/>
+			<item value="ToString"/>
+			<item value="strbuilder"/>
+			<item value="StringBuilder"/>
+			<item value="ThisConstructor"/>
+			<item value="Employee"/>
+			<item value="Demo6"/>
+			<item value="Experiment"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="284" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="391" key="DIALOG_HEIGHT"/>
+		<item value="967" key="DIALOG_X_ORIGIN"/>
+		<item value="115" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

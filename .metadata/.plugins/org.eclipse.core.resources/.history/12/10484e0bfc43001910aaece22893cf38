@@ -1,0 +1,56 @@
+package test;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Add extends HttpServlet {
+	public static ArrayList<Integer> KartList = new ArrayList<>();
+	private static final long serialVersionUID = 1L;
+	private int totalCost;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		String number = request.getParameter("value");
+		number.trim();
+		int n = Integer.parseInt(number);
+		System.out.println(n);
+		String name = Kart.name;
+		int value = Kart.price;
+		addCartItem(n, value);
+		out.print(name + "   " + value + " " + number);
+	}
+
+	public void addCartItem(int quantity, int price) {
+		int unitPrice = 0;
+		int totalPrice = 0;
+		int iQuantity = 0;
+		unitPrice = price;
+		iQuantity = quantity;
+		if (iQuantity > 0) {
+			totalPrice = unitPrice * iQuantity;
+			setTotalCost(totalPrice);
+			KartList.add(price);
+			calculateOrderTotal();
+		}
+	}
+
+	public void setTotalCost(int totalCost) {
+		this.totalCost = totalCost;
+	}
+
+	protected int calculateOrderTotal() {
+		int intTotal = 0;
+		for (int counter = 0; counter < KartList.size(); counter++) {
+			intTotal += KartList.get(counter);
+		}
+		return intTotal;
+	}
+
+}

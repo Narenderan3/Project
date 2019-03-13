@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Content</title>
+<style>
+p {
+	font-size: 20px;
+	font-family: sans-serif;
+	position:absolute;
+	left:50px;
+}
+
+img {
+	margin: 0 auto;
+	padding: 20px;
+	width: 80px;
+	height: 110px;
+}
+
+.left button {
+	position: absolute;
+	left: 25px;
+}
+
+.middle button {
+	position: absolute;
+	left: 510px;
+}
+
+.middleone button {
+	position: absolute;
+	left: 520px;
+}
+
+table {
+	width: 110%;
+	position: absolute;
+	left: 30px;
+	top: 50px;
+}
+</style>
+</head>
+<body
+	background="https://s.aolcdn.com/hss/storage/midas/7899c657da75bcba18cd507e8a69b8bd/203797873/mimaxlead.jpg">
+	<p>
+		<b>MI Mobile Phones</b>
+	</p>
+	<table>
+		<tr>
+			<td><img
+				src='https://www.91-img.com/gallery_images_uploads/d/a/da11d00c5a700c4a1c68e6df88c65c81de685384.jpg?w=0&h=901&q=80&c=1'
+				alt='Redmi 4 16GB'></td>
+			<td><img
+				src='https://www.91-img.com/gallery_images_uploads/f/8/f8bb2da448d54f48ebabf60e335f4fff9cbf49ab.jpg?w=0&h=901&q=80&c=1'
+				alt='Redmi 4A'></td>
+			<td><img
+				src='https://www.91-img.com/pictures/103712-v2-xiaomi-redmi-note-4-64gb-mobile-phone-large-1.jpg'
+				alt='Redmi note 4'></td>
+		</tr>
+		<tr>
+			<td><button>Redmi 4 16GB</button></td>
+			<td class="middleone"><button>Redmi 4A</button></td>
+			<td class="right"><button>Redmi Note 4</button></td>
+		</tr>
+		<tr>
+			<td><img src='https://img.ksp.co.il/item/46343/b_3.jpg'
+				alt='Redmi 5'></td>
+			<td><img
+				src='https://images.locanto.net/Redmi-5A-32-GB-SEALED-PACK/tn_3385081571.jpg'
+				alt='Redmi note 5A 32GB'></td>
+			<td><img
+				src='https://www.91-img.com/gallery_images_uploads/1/1/1169a542565c73526a14d4c4ab88fdeef938dbc8.jpg?w=0&h=901&q=80&c=1'
+				alt='Redmi 5 Plus'></td>
+		</tr>
+		<tr>
+			<td class="left"><button>Redmi 5</button></td>
+			<td class="middle"><button>Redmi Note 5A</button></td>
+			<td class="right"><button>Redmi 5 Plus</button></td>
+		</tr>
+		<tr>
+			<td><img
+				src='https://www.91-img.com/gallery_images_uploads/8/b/8bb56152c1a9a1d86bea7eeb39c00825635a6919.jpg?w=0&h=901&q=80&c=1'
+				alt='Redmi 6A'></td>
+			<td><img
+				src='https://www.91-img.com/pictures/127598-v11-xiaomi-redmi-6-pro-mobile-phone-medium-1.jpg'
+				alt='Redmi Note 6'></td>
+			<td><img
+				src='https://www.91-img.com/pictures/129556-v10-xiaomi-redmi-note-6-pro-mobile-phone-medium-1.jpg'
+				alt='Redmi Note 6 Pro'></td>
+		</tr>
+		<tr>
+			<td class="left"><button>Redmi 6A</button></td>
+			<td class="middle"><button>Redmi Note 6</button></td>
+			<td><button>Redmi Note 6 Pro</button></td>
+		</tr>
+	</table>
+</body>
+</html>

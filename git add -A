@@ -1,0 +1,33 @@
+[1mdiff --git a/DemoApp/src/test/Add.java b/DemoApp/src/test/Add.java[m
+[1mindex c0e5830..4abb990 100644[m
+[1m--- a/DemoApp/src/test/Add.java[m
+[1m+++ b/DemoApp/src/test/Add.java[m
+[36m@@ -20,6 +20,7 @@[m [mpublic class Add extends HttpServlet {[m
+ 			throws ServletException, IOException {[m
+ 		PrintWriter out = response.getWriter();[m
+ 		String number = request.getParameter("value");[m
+[32m+[m		[32mnumber.trim();[m
+ 		String name = Kart.name;[m
+ 		int value = Kart.price;[m
+ 		kartProduct.add(name);[m
+[1mdiff --git a/DemoApp/src/test/ImplementClass.java b/DemoApp/src/test/ImplementClass.java[m
+[1mindex d4019bc..ae0faac 100644[m
+[1m--- a/DemoApp/src/test/ImplementClass.java[m
+[1m+++ b/DemoApp/src/test/ImplementClass.java[m
+[36m@@ -11,13 +11,11 @@[m [mpublic class ImplementClass {[m
+ 		length++;[m
+ 		for (SignupClass sc : ClassList) {[m
+ 			if (sc.getEmail().equals(mail)) {[m
+[31m-				if (!flag) {[m
+[31m-					flag = true;[m
+[31m-					break;[m
+[31m-				}[m
+[32m+[m				[32mflag = true;[m
+[32m+[m				[32mbreak;[m
+ 			}[m
+ 		}[m
+[31m-		if (flag) {[m
+[32m+[m		[32mif (!flag) {[m
+ 			SignupClass sc = new SignupClass();[m
+ 			sc.setEmail(mail);[m
+ 			sc.setId(length);[m

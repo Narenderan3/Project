@@ -1,0 +1,28 @@
+package test;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Add extends HttpServlet {
+	public static AddingClass kart = new AddingClass();
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		String number = request.getParameter("value");
+		number.trim();
+		int n=Integer.parseInt(number);
+		System.out.println(n);
+		String name = Kart.name;
+		int value = Kart.price;
+		// kart.addCartItem(name, n, value);
+		out.print(name + "   " + value + " " + number);
+	}
+
+}

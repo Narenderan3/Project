@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<style>
+.phone {
+	font-size: 20px;
+	font-family: sans-serif;
+	position: absolute;
+	left: 20px;
+}
+
+.login {
+	font-size: 15px;
+	font-family: sans-serif;
+	position: absolute;
+	left: 1000px;
+}
+
+.signup {
+	font-size: 15px;
+	font-family: sans-serif;
+	position: absolute;
+	left: 1200px;
+}
+
+.welcome {
+	font-size: 30px;
+	font-family: sans-serif;
+	font-color: soild blue;
+	position: absolute;
+	left: 200px;
+	top: 60px;
+}
+
+.mobile {
+	font-size: 30px;
+	font-family: sans-serif;
+	font-color: soild blue;
+	position: absolute;
+	left: 170px;
+	top: 70px;
+}
+</style>
+</head>
+<body
+	background="https://s.aolcdn.com/hss/storage/midas/7899c657da75bcba18cd507e8a69b8bd/203797873/mimaxlead.jpg">
+	<p class='phone'>Mi Mobile Phones</p>
+	<P class='login'>
+		<a href="login.html">Login</a>
+	</P>
+	<P class="signup">
+		<a href="signup.html">SignUp</a>
+	</P>
+	<p class='welcome'>Welcome to largest</p>
+	<p class='mobile'>using mobile phones by user all over world.</p>
+
+</body>
+</html>

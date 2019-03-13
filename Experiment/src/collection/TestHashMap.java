@@ -1,0 +1,43 @@
+//Program to implement HashMap (Doesnot follow insertion order)
+package collection;
+
+import java.util.*;
+
+public class TestHashMap {
+	public static void main(String args[]) {
+		HashMap<Integer, String> hm = new HashMap<Integer, String>();
+		System.out.println("Initial list of elements: " + hm);
+		hm.put(100, "Amit");
+		hm.put(100, "Vijay"); // updated with the lastest values
+		hm.put(102, "Rahul");
+
+		System.out.println("After invoking put() method ");
+		for (Map.Entry<Integer, String> m : hm.entrySet()) {
+			System.out.println(m.getKey() + " " + m.getValue());
+		}
+
+		hm.putIfAbsent(103, "Gaurav");
+		System.out.println("After invoking putIfAbsent() method ");
+		for (Map.Entry<Integer, String> m : hm.entrySet()) {
+			System.out.println(m.getKey() + " " + m.getValue());
+		}
+		HashMap<Integer, String> map = new HashMap<Integer, String>();
+		map.put(104, "Ravi");
+		map.putAll(hm);
+		System.out.println("After invoking putAll() method ");
+		for (Map.Entry<Integer, String> m : map.entrySet()) {
+			System.out.println(m.getKey() + " " + m.getValue());
+		}
+		map.remove(100);
+		System.out.println("Updated list of elements: " + map);
+		// value-based removal
+		map.remove(101);
+		System.out.println("Updated list of elements: " + map);
+		// key-value pair based removal
+		map.remove(102, "Rahul");
+		System.out.println("Updated list of elements: " + map);
+	}
+}
+//Map<String,String> map=new HashMap<>();
+//System.out.println(map.put("G", "G"));
+//System.out.println(map.get("G"));

@@ -1,0 +1,30 @@
+package test;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		if (email.length() == 0) {
+			out.print("<center>Enter the Email Address</center>");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("login.html");
+			dispatcher.include(request, response);
+		} else if (password.length() == 0 || password.length() <= 8) {
+			if (password.length() == 0) {
+				out.print("<center>Enter the password</center>");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("login.html");
+				dispatcher.include(request, response);
+			}
+		}
+	}
+}

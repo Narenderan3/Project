@@ -1,0 +1,54 @@
+package test;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.regex.Pattern;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Signup extends HttpServlet {
+	public static ImplementClass implement = new ImplementClass();
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		String name = request.getParameter("username");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		if (name.length() != 0 && email.length() != 0 && password.length() != 0) {
+			boolean result = implement.add(name, email, password);
+			if (result)
+				out.println("<center>Record added</center>");
+			else
+				out.print("<center>Record already exist</center>");
+		}
+		boolean stringContainsNumber = Pattern.compile("[0-9]").matcher(name).find();
+		boolean stringContainsSpecialCharacter = Pattern.compile("[^a-zA-Z ]").matcher(name).find();
+		if (name.length() == 0) {
+			out.print("<center>Enter the Username</center>");
+			request.getRequestDispatcher("signup.html").include(request, response);
+		} else if (stringContainsNumber == true) {
+			out.print("<center>Username must not contain number</center>");
+			request.getRequestDispatcher("signup.html").include(request, response);
+		} else if (stringContainsSpecialCharacter == true) {
+			out.print("<center>Username must not contain Special Characters</center>");
+			request.getRequestDispatcher("signup.html").include(request, response);
+		} else if (email.length() == 0) {
+			out.print("<center>Enter the Email Address</center>");
+			request.getRequestDispatcher("signup.html").include(request, response);
+		} else if (password.length() == 0 || password.length() < 8) {
+			if (password.length() == 0) {
+				out.print("<center>Enter the password</center>");
+				request.getRequestDispatcher("signup.html").include(request, response);
+			} else {
+				out.print("<center>Password is weak</center>");
+				request.getRequestDispatcher("signup.html").include(request, response);
+			}
+			request.getRequestDispatcher("login.html").include(request, response);
+		}
+	}
+}

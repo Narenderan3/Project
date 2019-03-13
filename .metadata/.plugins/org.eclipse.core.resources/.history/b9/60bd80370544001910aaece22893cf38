@@ -1,0 +1,57 @@
+package test;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Add extends HttpServlet {
+	public static ArrayList<Integer> KartList = new ArrayList<>();
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		String number = request.getParameter("value");
+		String name = Kart.name;
+		int value = Kart.price;
+		int price = 0;
+		if (number.equals("null")) {
+			out.print("<p align='center'>Mention the amount of phone required</p>");
+			response.sendRedirect("kart");
+
+		} else {
+			number.trim();
+			int amount = Integer.parseInt(number);
+			price = addCartItem(name, amount, value);
+		}
+		int total = calculateTotalPrice();
+		out.print("<html><head> <style> a{ position:absolute; left:650px; top:450px;} "
+				+ "</style><body><p align='center'>" + "Product----------Quantity------Price</p>");
+		out.print("<p align='center'>" + name + "---------" + amount + "------" + price + "</p>");
+		out.print("<p align:'center'>" + total + "</p>");
+		out.print("<p><a href='content.html'>Add More</p></a>");
+		out.print("</head></body></html>");
+
+	}
+
+	public int addCartItem(String name, int quantity, int price) {
+		int totalPrice = 0;
+		totalPrice = price * quantity;
+		KartList.add(totalPrice);
+		return totalPrice;
+	}
+
+	protected int calculateTotalPrice() {
+		int intTotal = 0;
+		for (int counter = 0; counter < KartList.size(); counter++) {
+			intTotal += KartList.get(counter);
+		}
+		return intTotal;
+	}
+
+}

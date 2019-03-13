@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<style>
+.login {
+	font-size: 15px;
+	font-family: sans-serif;
+	position: absolute;
+	left: 1000px;
+}
+
+.signup {
+	font-size: 15px;
+	font-family: sans-serif;
+	position: absolute;
+	left: 1200px;
+}
+</style>
+</head>
+<body
+	background="https://s.aolcdn.com/hss/storage/midas/7899c657da75bcba18cd507e8a69b8bd/203797873/mimaxlead.jpg">
+	<P class='login'>
+		<a href="login.html">Login</a>
+	</P>
+	<P class="signup">
+		<a href="signup.html">SignUp</a>
+	</P>
+
+</body>
+</html>
